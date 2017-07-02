@@ -30,10 +30,6 @@ echo Installing the following:
 echo fish vim jdk8-openjdk nodejs npm ctags wget openssh gcc valgrind git fortune-mod cowsay make
 sudo pacman -S fish vim jdk8-openjdk nodejs npm ctags wget openssh gcc valgrind git fortune-mod cowsay make
 
-# Installing oh-my-fish
-echo Installing oh-my-fish
-curl -L https://get.oh-my.fish | fish
-
 # Install gui applications
 echo Installing the following:
 echo atom terminator chromium
