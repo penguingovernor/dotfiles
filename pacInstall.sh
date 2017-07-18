@@ -73,7 +73,6 @@ fi
 # Make .config/fish if not already existent
 if [ ! -d ~/.config/fish ]; then
   mkdir ~/.config/fish
-  rm -f ~/.config/terminator/config.fish
 fi
 
 # Make .config/terminator if not already existent
@@ -90,7 +89,7 @@ fi
 if [ ! -d ~/.vim ]; then
   mkdir ~/.vim/
 fi
-
+# Make vim/colors directory 
 if [ ! -d ~/.vim/colors ]; then
   mkdir ~/.vim/colors/
 fi
@@ -101,6 +100,7 @@ cp ./fonts/*.ttf ~/.fonts
 
 # Configure fish
 echo configuring fish
+rm -f ~/.config/fish/config.fish
 cp ./fish/config.fish ~/.config/fish/config.fish
 
 # configure atom
@@ -108,6 +108,7 @@ rm -f ~/.atom/config.cson
 cp ./atom/config.cson ~/.atom/config.cson
 
 # config terminator
+rm -f ~/.config/terminator/config
 cp ./terminator/config ~/.config/terminator/
 
 # config vim
