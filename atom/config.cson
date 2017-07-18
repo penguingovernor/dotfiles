@@ -9,6 +9,7 @@
       "Thumbs.db"
       "desktop.ini"
       "*.o"
+      "*.class"
       "*.gch"
     ]
     telemetryConsent: "no"
