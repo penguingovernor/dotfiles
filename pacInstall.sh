@@ -42,6 +42,7 @@ if test "$installAtom" = "y"
 then
 # Install atom packages
 echo Installing atom packages
+apm install docblockr
 apm install atom-beautify
 apm install autohide-tree-view
 apm install busy-signal
