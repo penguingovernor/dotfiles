@@ -49,13 +49,6 @@ export PATH=$PATH:$GOPATH/bin
 
 # }}
 
-# Startup Commands {{
-
-## Becuase I like snarky ascii yelling at me when I first login
-fortune -n 140 | cowsay -f tux | lolcat
-
-# }}
-
 # Antigen {{
 
 if [ ! -f $HOME/.zsh/antigen.zsh ]; then
@@ -86,5 +79,12 @@ antigen apply
 # Theme Options {{
 
 SPACESHIP_CHAR_PREFIX="🚀 "
+
+# }}
+
+# Startup Commands {{
+
+## Becuase I like snarky ascii yelling at me when I first login
+fortune -n 140 | cowsay -f tux | lolcat
 
 # }}
