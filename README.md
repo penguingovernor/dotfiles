@@ -7,7 +7,7 @@ The master branch contains my latest setup, if my setup is to drastically change
 ### Supported Software
 | Tool/Program 	| Associate config file(s) 	| Config Dependencies         	|                            Config Description                           	|
 |--------------	|--------------------------	|-----------------------------	|:-----------------------------------------------------------------------:	|
-| zsh          	|  .zshrc                  	| cowsay, fortune-mod, lolcat 	| Auto sets up antigen, sets prompt, some aliases, sets GOPATH, sets PATH 	|
+| zsh          	|  .zshrc                  	| cowsay, fortune-mod, lolcat 	| Auto sets up antigen, sets prompt, some aliases, sets GOPATH, sets PATH (Note that emojis and powerline fonts must be installed on the system)	|
 
 ### Cherry-Pick Installation 
 1. Download and install `git` for your system
