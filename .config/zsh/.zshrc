@@ -8,7 +8,7 @@ for src in $ZDOTDIR/private/*; do
     source "$src"
 done
 
-fortune | cowsay -f tux | lolcat
+fortune -n 140 | cowsay -f tux | lolcat
 
 # Source external scripts
 for src in $ZDOTDIR/src/*; do
