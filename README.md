@@ -26,7 +26,7 @@ cd dotfiles
     Example:
     ```shell
     # Assuming that you are in the root of this repo
-    ln -s .config/zsh/.zshenv $HOME/.zshenv
+    ln -s .zshenv $HOME/.zshenv
     ```
 
 ### Automated Install - All Config Files Copied Over
