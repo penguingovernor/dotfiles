@@ -1,8 +1,5 @@
 {
-    "git.ignoreMissingGitWarning": true,
     "workbench.startupEditor": "newUntitledFile",
     "editor.fontFamily": "'Operator Mono','Meslo LG M DZ for Powerline','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-    "editor.insertSpaces": false,
-    "workbench.colorTheme": "Dracula",
-    "editor.minimap.enabled": false
+    "workbench.colorTheme": "Dracula"
 }
