@@ -1,5 +1,5 @@
 {
     "workbench.startupEditor": "newUntitledFile",
-    "editor.fontFamily": "'Operator Mono','Meslo LG M DZ for Powerline','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontFamily": "'OperatorMono Nerd Font','Meslo LG M DZ for Powerline','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "workbench.colorTheme": "Dracula"
 }
