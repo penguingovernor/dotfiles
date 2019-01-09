@@ -1,5 +1,13 @@
 {
-    "workbench.startupEditor": "newUntitledFile",
-    "editor.fontFamily": "'OperatorMono Nerd Font','Meslo LG M DZ for Powerline','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-    "workbench.colorTheme": "Dracula"
+  "workbench.startupEditor": "newUntitledFile",
+  "editor.fontFamily": "'DankMono Nerd Font','OperatorMono Nerd Font','Meslo LG M DZ for Powerline','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "workbench.colorTheme": "Noctis Obscuro",
+  "cSpell.userWords": ["Unmarshall"],
+  "terminal.integrated.fontFamily": "\"DankMono Nerd Font\"",
+  "window.zoomLevel": 0,
+  "editor.formatOnSave": true,
+  "git.autofetch": true,
+  "workbench.sideBar.location": "right",
+  "editor.fontLigatures": true,
+  "editor.rulers": [120]
 }

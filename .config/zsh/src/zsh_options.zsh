@@ -47,3 +47,4 @@ unsetopt beep                   # no bell on error
 unsetopt hist_beep              # no bell on error in history
 unsetopt list_beep              # no bell on ambiguous completion
 unsetopt rm_star_silent         # ask for confirmation for `rm *' or `rm path/*'
+setopt interactivecomments
