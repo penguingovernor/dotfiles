@@ -12,34 +12,53 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
-
-		"println": {
-			"prefix": "println",
-			"body": [
-				"printf(\"$1\\n\",$2);"
-			],
-			"description": "printf with a new line",
-		},
-		"Info print statement": {
-			"prefix": "log",
-			"body": [
-				"fprintf(stderr,\"\\x1B[36m\"\"[INFO]\" \"\\x1B[0m\"\": \" \"$1\\n\", $2);",
-			],
-			"description": "Log to standard error"
-		},
-		"Debug print statement": {
-			"prefix": "debug",
-			"body": [
-				"fprintf(stderr, \"\\x1B[32m\"\"[DEBUG]\" \"\\x1B[0m\"\": \" \"$1\\n\", $2);",
-			],
-			"description": "Debug log to standard error"
-		},
-		"Error print statement": {
-			"prefix": "error",
-			"body": [
-				"fprintf(stderr, \"\\x1B[31m\"\"[ERROR]\" \"\\x1B[0m\"\": \" \"$1\\n\", $2);",
-			],
-			"description": "Error Log to standard error"
-		}
-
+	"println": {
+		"prefix": "println",
+		"body": [
+			"printf(\"$1\\n\",$2);"
+		],
+		"description": "printf with a new line",
+	},
+	"Info print statement": {
+		"prefix": "log",
+		"body": [
+			"fprintf(stderr,\"\\x1B[36m\"\"[INFO]\" \"\\x1B[0m\"\": \" \"$1\\n\", $2);",
+		],
+		"description": "Log to standard error"
+	},
+	"Debug print statement": {
+		"prefix": "debug",
+		"body": [
+			"fprintf(stderr, \"\\x1B[32m\"\"[DEBUG]\" \"\\x1B[0m\"\": \" \"$1\\n\", $2);",
+		],
+		"description": "Debug log to standard error"
+	},
+	"Error print statement": {
+		"prefix": "loge",
+		"body": [
+			"fprintf(stderr, \"\\x1B[31m\"\"[ERROR]\" \"\\x1B[0m\"\": \" \"$1\\n\", $2);",
+		],
+		"description": "Error Log to standard error"
+	},
+	"iterate through vector": {
+		"prefix": "it",
+		"body": [
+			"for(auto it = $1.begin() ; it != $1.end() ; ++it){$2}",
+		],
+		"description": "iterate through stl container"
+	},
+	"reverse iterate through vector": {
+		"prefix": "rit",
+		"body": [
+			"for(auto it = $1.rbegin() ; it != $1.rend() ; ++it){$2}",
+		],
+		"description": "iterate through stl container"
+	},
+	"if in in stl container": {
+		"prefix": "ifin",
+		"body": [
+			"if( $1.find($2) != $1.end() ){$3}",
+		],
+		"description": "iterate through stl container"
+	}
 }
