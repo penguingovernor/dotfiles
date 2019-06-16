@@ -1,1 +1,0 @@
-fpath=($ZDOTDIR/completions $fpath)
