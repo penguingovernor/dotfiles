@@ -4,8 +4,8 @@ export ZDOTDIR=$HOME/.config/zsh
 export HISTSIZE=10000
 export SAVEHIST=10000
 export HISTFILE=$HOME/.zsh_history
-# ZPLUG_HOME is needed to load in the plugin manager: zplug.
-export ZPLUG_HOME=$HOME/.zplug
+# ANTIBODYHOME is needed for the antibody plugin manager.
+export ANTIBODYHOME=$HOME/.local/antibody
 # PROGRAMMING is needed to making cd'ing into code easier.
 export PROGRAMMING=$HOME/Programming
 # GO* is needed for the installation and usage of go.
@@ -20,3 +20,4 @@ export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$BATROOT/bin
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$PANDOCROOT/bin
+export PATH=$PATH:$ANTIBODYHOME/bin

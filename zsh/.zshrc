@@ -72,37 +72,30 @@ function fix_wsl() {
     fi
 }
 
-#
-#            _
-#  _____ __ | |_   _  __ _
-# |_  / '_ \| | | | |/ _` |
-#  / /| |_) | | |_| | (_| |
-# /___| .__/|_|\__,_|\__, |
-#     |_|            |___/
-#
+function update_plugins() {
+    antibody bundle <$ZDOTDIR/plugins.txt >$ZDOTDIR/plugins.sh
+}
 
-# Check to see if zplug is installed.
-if [[ ! -d $ZPLUG_HOME ]]; then
-    git clone https://github.com/zplug/zplug $ZPLUG_HOME
+#              _   _ _               _
+#   __ _ _ __ | |_(_) |__   ___   __| |_   _
+#  / _` | '_ \| __| | '_ \ / _ \ / _` | | | |
+# | (_| | | | | |_| | |_) | (_) | (_| | |_| |
+#  \__,_|_| |_|\__|_|_.__/ \___/ \__,_|\__, |
+#                                      |___/
+if [[ ! -d $ANTIBODYHOME ]]; then
+    mkdir -p $ANTIBODYHOME/bin
+    curl -sfL git.io/antibody | sh -s - -b $ANTIBODYHOME/bin
 fi
+source $ZDOTDIR/plugins.sh
 
-source $ZPLUG_HOME/init.zsh
-
-# Plugins are listed here.
-zplug "mafredri/zsh-async", from:github
-zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
-zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-autosuggestions"
-zplug "zsh-users/zsh-history-substring-search"
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
-
-# Install plugins if there are plugins that have not been installed.
-if ! zplug check --verbose; then
-    zplug install
-fi
-
-# Load the plugins.
-zplug load
+#                            _      _   _
+#   ___ ___  _ __ ___  _ __ | | ___| |_(_) ___  _ __  ___
+#  / __/ _ \| '_ ` _ \| '_ \| |/ _ \ __| |/ _ \| '_ \/ __|
+# | (_| (_) | | | | | | |_) | |  __/ |_| | (_) | | | \__ \
+#  \___\___/|_| |_| |_| .__/|_|\___|\__|_|\___/|_| |_|___/
+#                     |_|
+autoload -Uz compinit
+compinit -c
 
 #
 #   __ _  ___
