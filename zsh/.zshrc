@@ -6,22 +6,22 @@
 #                       |_|
 
 # Options for history.
-setopt append_history           # append
-setopt hist_ignore_all_dups     # no duplicate
-setopt hist_reduce_blanks       # trim blanks
-setopt inc_append_history       # add commands as they are typed, don't wait until shell exit
-setopt share_history            # share hist between sessions
+setopt append_history       # append
+setopt hist_ignore_all_dups # no duplicate
+setopt hist_reduce_blanks   # trim blanks
+setopt inc_append_history   # add commands as they are typed, don't wait until shell exit
+setopt share_history        # share hist between sessions
 
 # Misc. options.
-setopt correct                  # try to correct spelling of commands
-setopt extended_glob            # activate complex pattern globbing
-setopt glob_dots                # include dotfiles in globbing
-setopt print_exit_value         # print return value if non-zero
-unsetopt beep                   # no bell on error
-unsetopt hist_beep              # no bell on error in history
-unsetopt list_beep              # no bell on ambiguous completion
-unsetopt rm_star_silent         # ask for confirmation for `rm *' or `rm path/*'
-setopt interactivecomments      # allow for comments in the shell
+setopt correct             # try to correct spelling of commands
+setopt extended_glob       # activate complex pattern globbing
+setopt glob_dots           # include dotfiles in globbing
+setopt print_exit_value    # print return value if non-zero
+unsetopt beep              # no bell on error
+unsetopt hist_beep         # no bell on error in history
+unsetopt list_beep         # no bell on ambiguous completion
+unsetopt rm_star_silent    # ask for confirmation for `rm *' or `rm path/*'
+setopt interactivecomments # allow for comments in the shell
 
 #
 #        _ _
@@ -59,12 +59,18 @@ alias .5="cd ../../../../.."
 # |_|  \__,_|_| |_|\___|\__|_|\___/|_| |_|___/
 #
 
-function fix_hist()
-{
-strings <(cat $HISTFILE) > $HISTFILE
-fc -R $HISTFILE
+function fix_hist() {
+    strings <(cat $HISTFILE) >$HISTFILE
+    fc -R $HISTFILE
 }
 
+# Fixes WSL compinit system.
+function fix_wsl() {
+    local FIX_COMP=$(compaudit)
+    if [[ $FIX_COMP ]]; then
+        yes | compaudit | xargs chmod go-w &>/dev/null
+    fi
+}
 
 #
 #            _
@@ -98,17 +104,6 @@ fi
 # Load the plugins.
 zplug load
 
-# Fixes WSL compinit system.
-function fix_wsl()
-{
-    local FIX_COMP=$(compaudit)
-    if [[ $FIX_COMP ]]; then
-        yes | compaudit | xargs chmod go-w &> /dev/null
-    fi
-}
-fix_wsl
-unfunction fix_wsl
-
 #
 #   __ _  ___
 #  / _` |/ _ \
@@ -117,8 +112,7 @@ unfunction fix_wsl
 #  |___/
 #
 
-function get_go()
-{
+function get_go() {
     # Change this link to the appropriate one for your system.
     local GO_DOWNLAOD=https://dl.google.com/go/go1.12.5.linux-amd64.tar.gz
     # Download go if needed.
@@ -140,8 +134,7 @@ function get_go()
 #
 
 # Bat is an improved version of cat.
-function get_bat()
-{
+function get_bat() {
     # Change this link to the appropriate one for your system.
     local BAT_DOWNLAOD=https://github.com/sharkdp/bat/releases/download/v0.11.0/bat-v0.11.0-x86_64-unknown-linux-gnu.tar.gz
     # Download bat if needed.
@@ -175,8 +168,7 @@ function get_bat()
 #
 
 # Pandoc for writing documents.
-function get_pandoc()
-{
+function get_pandoc() {
     # Change this link to the appropriate one for your system.
     local PANDOC_DOWNLAOD=https://github.com/jgm/pandoc/releases/download/2.7.2/pandoc-2.7.2-linux.tar.gz
     # Download bat if needed.
