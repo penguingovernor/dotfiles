@@ -76,6 +76,10 @@ function update_plugins() {
     antibody bundle <$ZDOTDIR/plugins.txt >$ZDOTDIR/plugins.sh
 }
 
+function punchcard() {
+    date "+'%g %b %d %I:%M%p"
+}
+
 #              _   _ _               _
 #   __ _ _ __ | |_(_) |__   ___   __| |_   _
 #  / _` | '_ \| __| | '_ \ / _ \ / _` | | | |
@@ -86,6 +90,7 @@ if [[ ! -d $ANTIBODYHOME ]]; then
     mkdir -p $ANTIBODYHOME/bin
     curl -sfL git.io/antibody | sh -s - -b $ANTIBODYHOME/bin
 fi
+[ ! -f $ZDOTDIR/plugins.sh ] && update_plugins
 source $ZDOTDIR/plugins.sh
 
 #                            _      _   _
