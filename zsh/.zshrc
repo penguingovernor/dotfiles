@@ -112,7 +112,7 @@ compinit -c
 
 function get_go() {
     # Change this link to the appropriate one for your system.
-    local GO_DOWNLAOD=https://dl.google.com/go/go1.12.7.linux-amd64.tar.gz
+    local GO_DOWNLAOD=https://dl.google.com/go/go1.13.linux-amd64.tar.gz
     # Download go if needed.
     if [[ ! -d $GOROOT ]]; then
         printf "\033[1;32m%s\033[0m %s\n" "Downloading" "go. . ."
