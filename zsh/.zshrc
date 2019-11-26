@@ -134,7 +134,7 @@ function get_go() {
 # Bat is an improved version of cat.
 function get_bat() {
     # Change this link to the appropriate one for your system.
-    local BAT_DOWNLAOD=https://github.com/sharkdp/bat/releases/download/v0.11.0/bat-v0.11.0-x86_64-unknown-linux-gnu.tar.gz
+    local BAT_DOWNLAOD=https://github.com/sharkdp/bat/releases/download/v0.12.1/bat-v0.12.1-x86_64-unknown-linux-gnu.tar.gz
     # Download bat if needed.
     if [[ ! -d $BATROOT ]]; then
         printf "\033[1;32m%s\033[0m %s\n" "Downloading" "bat. . ."
