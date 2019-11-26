@@ -42,7 +42,6 @@ The `.zshrc` includes three functions that can install programs that I use all t
 | Software | Function Name |
 | -------- | ------------- |
 | Go       | `get_go`      |
-| Pandoc   | `get_pandoc`  |
 | Bat      | `get_bat`     |
 
 This assumes that you are running a 64-bit Linux system.
