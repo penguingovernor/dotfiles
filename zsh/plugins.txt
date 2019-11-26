@@ -1,3 +1,4 @@
+jocelynmallon/zshmarks
 zsh-users/zsh-autosuggestions
 zdharma/fast-syntax-highlighting
 zsh-users/zsh-completions
