@@ -157,30 +157,3 @@ function get_bat() {
     fi
 }
 
-#
-#  ____                 _
-# |  _ \ __ _ _ __   __| | ___   ___
-# | |_) / _` | '_ \ / _` |/ _ \ / __|
-# |  __/ (_| | | | | (_| | (_) | (__
-# |_|   \__,_|_| |_|\__,_|\___/ \___|
-#
-
-# Pandoc for writing documents.
-function get_pandoc() {
-    # Change this link to the appropriate one for your system.
-    local PANDOC_DOWNLAOD=https://github.com/jgm/pandoc/releases/download/2.7.2/pandoc-2.7.2-linux.tar.gz
-    # Download bat if needed.
-    if [[ ! -d $PANDOCROOT ]]; then
-        printf "\033[1;32m%s\033[0m %s\n" "Downloading" "pandoc. . ."
-        echo "Note: To export as a pdf you'll need to install latex. . ."
-        # Make a temp directory, and extract the file there.
-        rm -rf /tmp/pandoc
-        mkdir -p /tmp/pandoc
-        tar -C /tmp/pandoc -xzf <(curl -L $PANDOC_DOWNLAOD)
-        cd /tmp/pandoc
-        mv * $PANDOCROOT
-        rm -rf /tmp/pandoc
-        # CD back to home
-        cd $HOME
-    fi
-}
