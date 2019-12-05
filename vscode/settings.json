@@ -1,14 +1,14 @@
 {
     // Font Settings.
-    "editor.fontFamily": "'Input Sans', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontFamily": "'Cascadia Code PL', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.fontLigatures": true,
     "editor.fontSize": 16,
-    "terminal.integrated.fontFamily": "Iosevka",
     "terminal.integrated.fontSize": 16,
     // Move the sidebar to the right.
     "workbench.sideBar.location": "right",
     // Use a custom title bar.
     "window.titleBarStyle": "custom",
+    "window.title": "${dirty} ${activeEditorMedium}${separator}${rootName}",
     // Because spaces are better Than Tabs.
     "editor.detectIndentation": true,
     "editor.insertSpaces": true,
@@ -17,7 +17,6 @@
     "workbench.editor.enablePreviewFromQuickOpen": false,
     // Don't show open editors.
     "explorer.openEditors.visible": 0,
-    "window.title": "${dirty} ${activeEditorMedium}${separator}${rootName}",
     // Don't use the minimap.
     "editor.minimap.enabled": false,
     // Smooth Scrolling
@@ -30,7 +29,10 @@
     "files.trimTrailingWhitespace": true,
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true,
+    // Show empty file on startup.
+    "workbench.startupEditor": "newUntitledFile",
     // Turn off telemetry and smiling face.
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
 }
+
