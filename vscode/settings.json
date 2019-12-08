@@ -9,7 +9,7 @@
     // Use a custom title bar.
     "window.titleBarStyle": "custom",
     "window.title": "${dirty} ${activeEditorMedium}${separator}${rootName}",
-    // Because spaces are better Than Tabs.
+    // Because spaces are better than Tabs.
     "editor.detectIndentation": true,
     "editor.insertSpaces": true,
     "editor.tabSize": 2,
@@ -33,6 +33,5 @@
     "workbench.startupEditor": "newUntitledFile",
     // Turn off telemetry and smiling face.
     "telemetry.enableCrashReporter": false,
-    "telemetry.enableTelemetry": false,
+    "telemetry.enableTelemetry": false
 }
-
