@@ -21,3 +21,5 @@ export PATH=$PATH:$BATROOT/bin
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$PANDOCROOT/bin
 export PATH=$PATH:$ANTIBODYHOME/bin
+export PATH=$PATH:$HOME/.local/bin
+
