@@ -112,7 +112,7 @@ compinit -c
 
 function get_go() {
     # Change this link to the appropriate one for your system.
-    local GO_DOWNLAOD=https://dl.google.com/go/go1.13.5.linux-amd64.tar.gz
+    local GO_DOWNLAOD=https://dl.google.com/go/go1.14.1.linux-amd64.tar.gz
     # Download go if needed.
     if [[ ! -d $GOROOT ]]; then
         printf "\033[1;32m%s\033[0m %s\n" "Downloading" "go. . ."
@@ -134,7 +134,7 @@ function get_go() {
 # Bat is an improved version of cat.
 function get_bat() {
     # Change this link to the appropriate one for your system.
-    local BAT_DOWNLAOD=https://github.com/sharkdp/bat/releases/download/v0.12.1/bat-v0.12.1-x86_64-unknown-linux-gnu.tar.gz
+    local BAT_DOWNLAOD=https://github.com/sharkdp/bat/releases/download/v0.13.0/bat-v0.13.0-x86_64-unknown-linux-gnu.tar.gz
     # Download bat if needed.
     if [[ ! -d $BATROOT ]]; then
         printf "\033[1;32m%s\033[0m %s\n" "Downloading" "bat. . ."
@@ -156,4 +156,3 @@ function get_bat() {
         cd $HOME
     fi
 }
-
