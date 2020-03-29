@@ -23,3 +23,5 @@ export PATH=$PATH:$PANDOCROOT/bin
 export PATH=$PATH:$ANTIBODYHOME/bin
 export PATH=$PATH:$HOME/.local/bin
 
+# Setup GPG
+export GPG_TTY=$(tty)
