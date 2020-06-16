@@ -1,37 +1,38 @@
 {
-    // Font Settings.
-    "editor.fontFamily": "'Cascadia Code PL', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-    "editor.fontLigatures": true,
-    "editor.fontSize": 16,
-    "terminal.integrated.fontSize": 16,
-    // Move the sidebar to the right.
-    "workbench.sideBar.location": "right",
-    // Use a custom title bar.
-    "window.titleBarStyle": "custom",
-    "window.title": "${dirty} ${activeEditorMedium}${separator}${rootName}",
-    // Because spaces are better than Tabs.
-    "editor.detectIndentation": true,
-    "editor.insertSpaces": true,
-    "editor.tabSize": 2,
-    // Always open files.
-    "workbench.editor.enablePreviewFromQuickOpen": false,
-    // Don't show open editors.
-    "explorer.openEditors.visible": 0,
-    // Don't use the minimap.
-    "editor.minimap.enabled": false,
-    // Smooth Scrolling
-    "editor.smoothScrolling": true,
-    // Cursor Phase + Smooth Scrolling.
-    "editor.cursorBlinking": "phase",
-    "editor.cursorSmoothCaretAnimation": true,
-    // Format on {save,paste}, add newline, and trim trailing whitespace.
-    "files.insertFinalNewline": true,
-    "files.trimTrailingWhitespace": true,
-    "editor.formatOnSave": true,
-    "editor.formatOnPaste": true,
-    // Show empty file on startup.
-    "workbench.startupEditor": "newUntitledFile",
-    // Turn off telemetry and smiling face.
-    "telemetry.enableCrashReporter": false,
-    "telemetry.enableTelemetry": false
+  // Font Settings.
+  "editor.fontFamily": "'JetBrainsMono Nerd Font','Cascadia Code PL', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 12,
+  "terminal.integrated.fontSize": 12,
+  // Move the sidebar to the right.
+  "workbench.sideBar.location": "right",
+  // Use a custom title bar.
+  "window.titleBarStyle": "custom",
+  "window.title": "${dirty} ${activeEditorMedium}${separator}${rootName}",
+  // Because tabs are better than spaces.
+  "editor.detectIndentation": true,
+  "editor.insertSpaces": false,
+  "editor.tabSize": 2,
+  // Always open files.
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  // Don't show open editors.
+  "explorer.openEditors.visible": 0,
+  // Don't use the minimap.
+  "editor.minimap.enabled": false,
+  // Smooth Scrolling
+  "editor.smoothScrolling": true,
+  // Cursor Phase + Smooth Scrolling.
+  "editor.cursorBlinking": "phase",
+  "editor.cursorSmoothCaretAnimation": true,
+  // Format on {save,paste}, add newline, and trim trailing whitespace.
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  // Show empty file on startup.
+  "workbench.startupEditor": "newUntitledFile",
+  // Turn off telemetry and smiling face.
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false
 }
