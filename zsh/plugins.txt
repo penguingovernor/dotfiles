@@ -1,8 +1,4 @@
-jocelynmallon/zshmarks
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-completions
-
-# Themes
 zdharma/fast-syntax-highlighting
 denysdovhan/spaceship-prompt
-zsh-users/zsh-history-substring-search

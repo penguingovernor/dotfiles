@@ -56,7 +56,6 @@ alias .6="cd ../../../../../.."
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-
 #
 #   __                  _   _
 #  / _|_   _ _ __   ___| |_(_) ___  _ __  ___
@@ -118,7 +117,7 @@ compinit -c
 
 function get_go() {
     # Change this link to the appropriate one for your system.
-    local GO_DOWNLAOD=https://dl.google.com/go/go1.14.4.linux-amd64.tar.gz
+    local GO_DOWNLAOD=https://dl.google.com/go/go1.15.linux-amd64.tar.gz
     # Download go if needed.
     if [[ ! -d $GOROOT ]]; then
         printf "\033[1;32m%s\033[0m %s\n" "Downloading" "go. . ."
