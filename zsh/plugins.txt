@@ -1,4 +1,4 @@
+denysdovhan/spaceship-prompt
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-completions
-zdharma/fast-syntax-highlighting
-denysdovhan/spaceship-prompt
+zsh-users/zsh-syntax-highlighting

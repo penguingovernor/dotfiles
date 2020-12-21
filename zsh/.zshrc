@@ -65,16 +65,12 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 #
 
 function fix_hist() {
-    strings <(cat $HISTFILE) >$HISTFILE
-    fc -R $HISTFILE
-}
-
-# Fixes WSL compinit system.
-function fix_wsl() {
-    local FIX_COMP=$(compaudit)
-    if [[ $FIX_COMP ]]; then
-        yes | compaudit | xargs chmod go-w &>/dev/null
+    if ! command -v sponge &>/dev/null; then
+        echo "missing requried sponge command"
+        return
     fi
+    strings <$HISTFILE | sponge $HISTFILE
+    fc -R $HISTFILE
 }
 
 function update_plugins() {
@@ -83,6 +79,19 @@ function update_plugins() {
 
 function punchcard() {
     date "+'%g %b %d %I:%M%p"
+}
+
+function get_go() {
+    # Change this link to the appropriate one for your system.
+    local GO_DOWNLAOD=https://golang.org/dl/go1.15.6.linux-amd64.tar.gz
+    # Download go if needed.
+    if [[ ! -d $GOROOT ]]; then
+        printf "\033[1;32m%s\033[0m %s\n" "Downloading" "go. . ."
+        mkdir -p $GOROOT
+        tar -C $HOME/.local -xzf <(curl -L $GO_DOWNLAOD)
+        # Create GOPATH if needed.
+        [ ! -d $GOPATH ] && mkdir -p $GOPATH
+    fi
 }
 
 #              _   _ _               _
@@ -106,58 +115,3 @@ source $ZDOTDIR/plugins.sh
 #                     |_|
 autoload -Uz compinit
 compinit -c
-
-#
-#   __ _  ___
-#  / _` |/ _ \
-# | (_| | (_) |
-#  \__, |\___/
-#  |___/
-#
-
-function get_go() {
-    # Change this link to the appropriate one for your system.
-    local GO_DOWNLAOD=https://dl.google.com/go/go1.15.linux-amd64.tar.gz
-    # Download go if needed.
-    if [[ ! -d $GOROOT ]]; then
-        printf "\033[1;32m%s\033[0m %s\n" "Downloading" "go. . ."
-        mkdir -p $GOROOT
-        tar -C $HOME/.local -xzf <(curl -L $GO_DOWNLAOD)
-        # Create GOPATH if needed.
-        [ ! -d $GOPATH ] && mkdir -p $GOPATH
-    fi
-}
-
-#
-#  _           _
-# | |__   __ _| |_
-# | '_ \ / _` | __|
-# | |_) | (_| | |_
-# |_.__/ \__,_|\__|
-#
-
-# Bat is an improved version of cat.
-function get_bat() {
-    # Change this link to the appropriate one for your system.
-    local BAT_DOWNLAOD=https://github.com/sharkdp/bat/releases/download/v0.14.0/bat-v0.14.0-x86_64-unknown-linux-gnu.tar.gz
-    # Download bat if needed.
-    if [[ ! -d $BATROOT ]]; then
-        printf "\033[1;32m%s\033[0m %s\n" "Downloading" "bat. . ."
-        # Make a temp directory, and extract the file there.
-        rm -rf /tmp/bat
-        mkdir -p /tmp/bat
-        tar -C /tmp/bat -xzf <(curl -L $BAT_DOWNLAOD)
-        # Make the bin folder, cd into it and link the bat binary.
-        cd /tmp/bat/*
-        mkdir bin
-        cd bin
-        ln -s ../bat
-        # CD back to the folder that containes the extracted folder
-        # Move it to the correct location, then remove the tmp folder.
-        cd /tmp/bat
-        mv * $BATROOT
-        rm -rf /tmp/bat
-        # CD back to home
-        cd $HOME
-    fi
-}
