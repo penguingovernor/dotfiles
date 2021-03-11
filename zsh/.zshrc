@@ -83,7 +83,7 @@ function punchcard() {
 
 function get_go() {
     # Change this link to the appropriate one for your system.
-    local GO_DOWNLAOD=https://golang.org/dl/go1.15.6.linux-amd64.tar.gz
+    local GO_DOWNLAOD=https://golang.org/dl/go1.16.2.linux-amd64.tar.gz
     # Download go if needed.
     if [[ ! -d $GOROOT ]]; then
         printf "\033[1;32m%s\033[0m %s\n" "Downloading" "go. . ."
@@ -93,6 +93,8 @@ function get_go() {
         [ ! -d $GOPATH ] && mkdir -p $GOPATH
     fi
 }
+
+function open() { powershell.exe -command "ii"" $(wslpath -w $1)" }
 
 #              _   _ _               _
 #   __ _ _ __ | |_(_) |__   ___   __| |_   _
@@ -115,3 +117,14 @@ source $ZDOTDIR/plugins.sh
 #                     |_|
 autoload -Uz compinit
 compinit -c
+
+#  ____  _             _
+# / ___|| |_ __ _ _ __| |_ _   _ _ __
+# \___ \| __/ _` | '__| __| | | | '_ \
+#  ___) | || (_| | |  | |_| |_| | |_) |
+# |____/ \__\__,_|_|   \__|\__,_| .__/
+#                               |_|
+
+# Setup tmux
+echo "set -g mouse on" > $HOME/.tmux.conf
+eval $(/home/jorge/.linuxbrew/bin/brew shellenv)
