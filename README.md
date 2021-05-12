@@ -7,9 +7,9 @@ Two programs are covered in these dotfiles:
 1. [Visual Studio Code](https://code.visualstudio.com)
 2. [zsh](https://www.zsh.org)
 
-## Visual Studio Code
+## Installation
 
-### Installation
+### Visual Studio Code
 
 Install (using cp, ln, install, or whatever your system has) `vscode/settings.json` to the vscode config directory
 
@@ -17,9 +17,7 @@ For Linux/Mac the default directory is: `$HOME/.config/Code/User`
 
 For Windows the default directory is: `%APPDATA%\Code\User`
 
-## zsh
-
-### Installation
+### zsh
 
 ***For Linux/Mac users only.***
 
@@ -30,19 +28,28 @@ For Windows the default directory is: `%APPDATA%\Code\User`
 Here are the shell commands assuming you're in the root of this repo
 
 ```shell
-mkdir -p $HOME/.config/zsh
-cp zsh/{.zshenv,.zshrc} $HOME/.config/zsh
+mkdir -p $HOME/.config
+ln -s $(realpath zsh) $HOME/.config
 ln -s $HOME/.config/zsh/.zshenv $HOME/.zshenv
 ```
 
-### Goodies
+#### Prompt
+
+Prompt available [here](https://starship.rs/)
+
+### tmux
+
+```shell
+ln -s $(realpath tmux/.tmux.conf) $HOME
+```
+
+## Goodies
 
 The `.zshrc` includes three functions that can install programs that I use all the time.
 
 | Software | Function Name |
 | -------- | ------------- |
 | Go       | `get_go`      |
-| Bat      | `get_bat`     |
 
 This assumes that you are running a 64-bit Linux system.
 If you'd like to change the download path for either of the above programs set the local variable `*_DOWNLOAD` in the `.zshrc` file to the appropriate one for your system.

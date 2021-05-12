@@ -83,7 +83,7 @@ function punchcard() {
 
 function get_go() {
     # Change this link to the appropriate one for your system.
-    local GO_DOWNLAOD=https://golang.org/dl/go1.16.2.linux-amd64.tar.gz
+    local GO_DOWNLAOD=https://golang.org/dl/go1.16.4.linux-amd64.tar.gz
     # Download go if needed.
     if [[ ! -d $GOROOT ]]; then
         printf "\033[1;32m%s\033[0m %s\n" "Downloading" "go. . ."
@@ -125,6 +125,5 @@ compinit -c
 # |____/ \__\__,_|_|   \__|\__,_| .__/
 #                               |_|
 
-# Setup tmux
-echo "set -g mouse on" > $HOME/.tmux.conf
-eval $(/home/jorge/.linuxbrew/bin/brew shellenv)
+# Start prompt
+eval "$(starship init zsh)"
